@@ -23,7 +23,7 @@ public:
                 if (adj[cur][next] == INT_MAX) continue;
                 if (dis[cur] + adj[cur][next] < dis[next]) {
                     dis[next] = dis[cur] + adj[cur][next];
-                    
+                    smallQue.push({dis[next], next});
                 }
             }
         }
