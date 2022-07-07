@@ -14,7 +14,7 @@ public:
         smallQue.push({dis[start], start});
         while (!smallQue.empty()) {
 
-            
+            auto [d, cur] = smallQue.top();
             smallQue.pop();
 
             visited[cur] = true;
@@ -23,7 +23,7 @@ public:
                 if (adj[cur][next] == INT_MAX) continue;
                 if (dis[cur] + adj[cur][next] < dis[next]) {
                     dis[next] = dis[cur] + adj[cur][next];
-                    smallQue.push({dis[next], next});
+                    
                 }
             }
         }
